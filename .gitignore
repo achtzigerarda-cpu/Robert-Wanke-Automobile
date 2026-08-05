@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# lokale Werkzeug-Konfiguration
+.claude/
+
+# Arbeitsmaterial, nicht Teil der Website
+CLAUDEwebdesign copy (1).md
+screencapture-*.png
