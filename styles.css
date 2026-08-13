@@ -560,60 +560,58 @@ blockquote.pull-quote cite {
    Testimonials
    ========================================================================== */
 
-.testimonials-head {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 1.5rem;
-}
-.testimonials-head .rating-line {
-  font-size: var(--step-1);
-  color: var(--text-muted);
-}
-.testimonials-head .rating-line a { border-bottom: 1px solid var(--line); }
-.testimonials-head .rating-line a:hover { color: var(--rust-deep); border-color: var(--rust); }
-
-.testimonial-scroll {
-  margin-top: 2.5rem;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: min(85%, 22rem);
-  gap: 1.25rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  scroll-snap-type: x proximity;
-  -webkit-overflow-scrolling: touch;
-}
-.testimonial-scroll::-webkit-scrollbar { height: 6px; }
-.testimonial-scroll::-webkit-scrollbar-thumb { background: var(--line); }
-
-.testimonial-card {
-  scroll-snap-align: start;
+/* Nur die Gesamtnote als Tatsache, verlinkt auf die Quelle —
+   keine Wiedergabe fremder Rezensionstexte. */
+.rating-panel {
   border: 1px solid var(--line);
-  padding: 1.75rem;
+  padding: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
-.testimonial-card .stars { color: var(--rust); letter-spacing: 0.1em; font-size: var(--step-1); }
-.testimonial-card p {
-  font-family: var(--font-display);
-  font-size: var(--step0);
-  line-height: 1.5;
-}
-.testimonial-card footer {
-  font-size: var(--step-1);
-  color: var(--text-muted);
-  margin-top: auto;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 30rem;
 }
 
-@media (min-width: 1024px) {
-  .testimonial-scroll {
-    grid-auto-flow: row;
-    grid-template-columns: repeat(3, 1fr);
-    overflow: visible;
+.rating-score {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+}
+.rating-value {
+  font-size: clamp(3rem, 2.2rem + 3.5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.rating-max {
+  font-size: var(--step1);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.rating-stars {
+  color: var(--rust);
+  letter-spacing: 0.14em;
+  font-size: var(--step1);
+}
+
+.rating-meta {
+  font-size: var(--step-1);
+  color: var(--text-muted);
+}
+
+.rating-panel .btn { margin-top: 1.25rem; }
+
+@media (min-width: 900px) {
+  .rating-panel {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    max-width: none;
   }
+  .rating-panel .btn { margin-top: 0; margin-left: auto; }
+  .rating-stars { margin-right: -1rem; }
 }
 
 /* ==========================================================================
