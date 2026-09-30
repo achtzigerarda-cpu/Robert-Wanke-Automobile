@@ -8,8 +8,10 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2317181a'/%3E%3Ctext x='32' y='43' font-family='Georgia, serif' font-size='26' font-style='italic' fill='%23c6693a' text-anchor='middle'%3ERW%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="fonts/ibm-plex-sans-normal-latin-118b75.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/fraunces-normal-latin-63f165.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="fonts/fonts.css">
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high"
+      imagesrcset="img/Robert1-400.webp 400w, img/Robert1-600.webp 600w, img/Robert1-800.webp 800w, img/Robert1-1000.webp 1000w, img/Robert1-1200.webp 1200w"
+      imagesizes="(min-width: 1360px) 540px, (min-width: 900px) 45vw, calc(100vw - 3rem)">
+<link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body>
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -74,7 +76,13 @@
       </div>
 
       <figure class="hero-media">
-        <img src="Robert1.jpg" alt="Schwarzer Ford Ranger mit Frontbügel, Radlaufverbreiterungen und schwarzen Felgen" width="1200" height="642">
+        <picture>
+          <source type="image/webp"
+                  srcset="img/Robert1-400.webp 400w, img/Robert1-600.webp 600w, img/Robert1-800.webp 800w, img/Robert1-1000.webp 1000w, img/Robert1-1200.webp 1200w"
+                  sizes="(min-width: 1360px) 540px, (min-width: 900px) 45vw, calc(100vw - 3rem)">
+          <img src="Robert1.jpg" alt="Schwarzer Ford Ranger mit Frontbügel, Radlaufverbreiterungen und schwarzen Felgen"
+               width="1200" height="642" fetchpriority="high" decoding="async">
+        </picture>
         <figcaption>Vom Serienfahrzeug zum fertigen Umbau.</figcaption>
       </figure>
     </div>
@@ -108,7 +116,11 @@
 
   <!-- ============================= MANIFESTO BAND ============================= -->
   <section class="manifesto on-dark reveal">
-    <img src="Robert2.jpg" alt="Nahaufnahme von Rad, Reifen und Kotflügel eines Mercedes vor der Werkstatt" width="1200" height="642">
+    <picture>
+      <source type="image/webp" srcset="img/Robert2-400.webp 400w, img/Robert2-600.webp 600w, img/Robert2-800.webp 800w, img/Robert2-1000.webp 1000w, img/Robert2-1200.webp 1200w" sizes="100vw">
+      <img src="Robert2.jpg" alt="Nahaufnahme von Rad, Reifen und Kotflügel eines Mercedes vor der Werkstatt"
+           width="1200" height="642" loading="lazy" decoding="async">
+    </picture>
     <div class="wrap">
       <div class="manifesto-text">
         <span class="eyebrow">In der Werkstatt</span>
@@ -162,7 +174,13 @@
   <section class="classics reveal">
     <div class="wrap">
       <figure class="classics-media">
-        <img src="Robert3.jpg" alt="Roter Fiat 500 Cabrio mit geöffnetem Faltdach" width="1200" height="642">
+        <picture>
+          <source type="image/webp"
+                  srcset="img/Robert3-400.webp 400w, img/Robert3-600.webp 600w, img/Robert3-800.webp 800w, img/Robert3-1000.webp 1000w, img/Robert3-1200.webp 1200w"
+                  sizes="(min-width: 1360px) 690px, (min-width: 900px) 57vw, calc(100vw - 3rem)">
+          <img src="Robert3.jpg" alt="Roter Fiat 500 Cabrio mit geöffnetem Faltdach"
+               width="1200" height="642" loading="lazy" decoding="async">
+        </picture>
       </figure>
 
       <div class="classics-copy">
@@ -268,7 +286,7 @@
 
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer on-dark">
   <div class="wrap">
     <div>
       <a class="footer-logo" href="#top">Robert Wanke <span>Automobile</span></a>
@@ -294,6 +312,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=2"></script>
+<script src="script.js?v=3" defer></script>
 </body>
 </html>
